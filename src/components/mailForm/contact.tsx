@@ -8,17 +8,13 @@ import backButtonDark from '../../assets/SVG/iconsDark/backButtonDark.svg';
 import Loader from '../loader/pageLoader';
 import ButtonLoader from '../loader/buttonLoader';
 import { useTheme } from 'next-themes';
-import { delay } from '@/actions/delay';
+import { delay } from '@/utils/delay';
 
 const ContactPage: React.FC = () => {
 	const { resolvedTheme } = useTheme();
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 	const [buttonLoad, setButtonLoad] = useState({error: false, confirm: false, load: false})
 
-
-	useEffect(() => {
-		delay(()=>{setIsLoading(false)}, 700)
-	}, []);
 
 	const [formData, setFormData] = useState({
 		name: '',

@@ -27,7 +27,6 @@ const LogosSlider: React.FC = () => {
 		'vite',
 		'bootstrap',
 		'bash',
-		'npm',
 		'tailwind',
 	];
 	const carouselBlogs = [...logos];
@@ -39,10 +38,10 @@ const LogosSlider: React.FC = () => {
 					<div
 						className={`flex whitespace-nowrap ${
 							isIntersecting ? 'animate-scroll' : ''
-						} px-5`}>
+						} gap-x-2`}>
 						{carouselBlogs.map((index) => (
 							<img
-								src={`https://skillicons.dev/icons?i=${carouselBlogs}&perline=21`}
+								src={`https://skillicons.dev/icons?i=${carouselBlogs}&perline=10`}
 								key={index}
 							/>
 						))}

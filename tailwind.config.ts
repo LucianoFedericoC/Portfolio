@@ -5,6 +5,7 @@ const config: Config = {
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
+		"./src/**/*.{html,js}",
 	],
 	darkMode: ['class'],
 	theme: {
@@ -13,6 +14,7 @@ const config: Config = {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+					'logo': "url('/assets/SVG/LogosSlider.svg')",
 			},
 			screens: {
 				smartphone_200px: '200px',
@@ -31,8 +33,13 @@ const config: Config = {
 				},
 				scale: {
 					'200': '2',
-				}
+				},
 			},
+			utilities: {
+				'preserve-3d': {
+				  'transform-style': 'preserve-3d',
+				},
+			  },
 			keyframes: {
 				slide: {
 					'0%': { transform: 'translateY(100%)', opacity: '0.1' },
@@ -46,11 +53,21 @@ const config: Config = {
 						transform: 'translateX(0)',
 					},
 					'100%': {
-						transform: 'translateX(calc(-256px * 21 - 0.5rem * 42))',
+						transform:
+							'translateX(calc(-256px * 21 - 0.5rem * 42))',
 					},
 				},
+				flipHorizontal: {
+					'0%, 100%': {
+					  transform: 'rotateY(0deg)',
+					},
+					'50%': {
+					  transform: 'rotateY(180deg) scaleX(-1)',
+					},
+				  },
 			},
 			animation: {
+				flipHorizontal: 'flipHorizontal 3s linear infinite',
 				scroll: 'scroll 100s linear infinite',
 				slide: 'slide 2.5s linear infinite',
 			},

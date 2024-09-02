@@ -10,7 +10,7 @@ import linkedInDark from '../../assets/SVG/iconsDark/linkedinDark.svg';
 import upArrow from '../../assets/SVG/iconsLight/upArrow.svg';
 import Navbar from '../navigation/nav/navBar';
 import Image from 'next/image';
-import handleSection from '../../actions/sectioned';
+import handleSection from '../../utils/sectioned';
 import HamburguerMenu from '../navigation/nav/hamburguerMenu';
 import { useRef, useEffect, useState } from 'react';
 import { SectionRef } from './domain/home/home.interface';
@@ -18,7 +18,6 @@ import Projects from '../projects';
 import AboutMe from '../aboutMe';
 import Loader from '../loader/pageLoader';
 import { useTheme } from 'next-themes';
-import { delay } from '@/actions/delay';
 
 const Home = () => {
 	const section_1 = useRef<SectionRef>(null);
@@ -33,9 +32,7 @@ const Home = () => {
 
 	useEffect(() => {
 		setResolvedTheme(currentTheme);
-		delay(() => {
-			setIsLoading(false);
-		}, 700);
+		setIsLoading(false);
 	}, [currentTheme]);
 
 	const handleScrollToTop = () => {
@@ -63,9 +60,9 @@ const Home = () => {
 		<>
 			{!isLoading ? (
 				<div className='w-full h-full'>
-					<header className='h-screen dark:bg-portfolio-black bg-portfolio-antiFlashWhite'>
-						<Navbar section2={section_2} />
-						<HamburguerMenu section2={section_2} />
+					<Navbar section2={section_2} />
+					<HamburguerMenu section2={section_2} />
+					<header className='dark:bg-portfolio-black bg-portfolio-antiFlashWhite h-screen w-full flex justify-center items-center'>
 						<Image
 							className='absolute flex md:top-[40%] md:left-[45%] left-[25%] top-[20%] md:size-max size-2/4 opacity-60 animate-fade animate-once animate-duration-[3000ms] animate-ease-in'
 							src={logo}
@@ -89,7 +86,7 @@ const Home = () => {
 											handleSection(e, section_1)
 										}
 										className='flex w-28 h-12 justify-center items-center dark:text-portfolio-antiFlashWhite text-portfolio-black bg-portfolio-orange font-semibold rounded-md hover:scale-90 duration-300'>
-										About me
+										Sobre mi
 									</button>
 								</div>
 							</div>
@@ -151,11 +148,17 @@ const Home = () => {
 							</div>
 						</div>
 					</header>
+					<div
+						className={`opacity-20 bg-center bg-cover bg-no-repeat bg-[url('https://res.cloudinary.com/codiography/image/upload/v1619536430/2-B_kte4f2.png')] bg-fixed h-4 flex items-center justify-center`}
+					/>
 					<section
 						ref={section_1}
 						className='dark:bg-portfolio-black bg-portfolio-antiFlashWhite h-screen w-full flex justify-center items-center'>
 						<AboutMe />
 					</section>
+					<div
+						className={`opacity-20 bg-center bg-cover bg-no-repeat bg-[url('https://res.cloudinary.com/codiography/image/upload/v1619536430/2-B_kte4f2.png')] bg-fixed h-4 flex items-center justify-center`}
+					/>
 					<section
 						ref={section_2}
 						className='dark:bg-portfolio-black bg-portfolio-antiFlashWhite h-screen w-full flex justify-center items-center'>
