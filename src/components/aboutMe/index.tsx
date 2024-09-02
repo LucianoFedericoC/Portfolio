@@ -1,6 +1,6 @@
 import LogosSlider from '../slideLogos';
 import Image from 'next/image';
-import myImage from '../../assets/myImage.png';
+import myImage from '../../assets/myImage.jpg';
 import { useState, useEffect } from 'react';
 
 const AboutMe = () => {
@@ -55,7 +55,7 @@ const AboutMe = () => {
 			style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.2)' }}>
 			<header className='flex justify-center w-full gap-3'>
 				<div
-					className='flex-grow-3 max-w-48 min-w-20 shadow p-4 border border-gray-700 rounded-md'
+					className='flex-grow-3 max-w-24 md:max-w-48 min-w-20 shadow p-2 border border-gray-700 rounded-md'
 					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
 					<Image
 						src={myImage}
@@ -96,7 +96,7 @@ const AboutMe = () => {
 								Skills
 							</h1>
 						</li>
-						<div className='flex flex-row justify-around items-center w-full p-2 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
+						<div className='flex flex-col md:flex-row justify-around items-center w-full p-2 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
 							<li className='mb-4 sm:mb-0 flex flex-col text-center'>
 								{techFront.map((tech, index) => (
 									<span key={index}>-{tech}-</span>
