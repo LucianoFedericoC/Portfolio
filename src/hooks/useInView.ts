@@ -28,7 +28,7 @@ const useInView = <T extends Element | null>(
 		return () => {
 			observer?.disconnect();
 		};
-	}, []);
+	}, );
 
 	return isIntersecting;
 };
