@@ -19,11 +19,12 @@ import Loader from '../loader/pageLoader';
 import { useTheme } from 'next-themes';
 
 const Home = () => {
-	const section_1 = useRef<HTMLDivElement>(null);
-	const section_2 = useRef(null);
+	const section_1 = useRef<HTMLElement>(null);
+	const section_2 = useRef<HTMLElement>(null);
 
 	const [showButton, setShowButton] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
+
 	const { resolvedTheme: currentTheme }: any = useTheme();
 	const [resolvedTheme, setResolvedTheme] = useState('light');
 
