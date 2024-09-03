@@ -56,11 +56,13 @@ const AboutMe = () => {
 				style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.2)' }}>
 				<header className='flex justify-center w-full gap-3'>
 					<div
-						className='flex-grow-3 max-w-24 md:max-w-36 min-w-20 shadow p-2 border border-gray-700 rounded-md'
+						className='flex-grow-3 max-w-24 md:max-w-36 shadow p-2 border border-gray-700 rounded-md'
 						style={{
 							boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)',
 						}}>
 						<Image
+							width={100}
+							height={100}
 							src={myImage}
 							loading='lazy'
 							alt='Mentor profile'
@@ -83,7 +85,7 @@ const AboutMe = () => {
 					className='w-full border border-gray-700 rounded shadow'
 					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
 					<div className='p-4'>
-						<ul className='relative flex flex-col justify-start overflow-x-hidden overflow-y-auto max-h-96'>
+						<ul className='relative flex flex-col justify-start overflow-x-hidden overflow-y-auto max-h-44 lg:max-h-96'>
 							<li>
 								<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2'>
 									Sobre mi
