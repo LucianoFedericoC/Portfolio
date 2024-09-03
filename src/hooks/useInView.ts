@@ -1,34 +1,25 @@
 import { MutableRefObject, useEffect, useState } from 'react';
 
-const useInView = <T extends Element | null>(
-	target: MutableRefObject<T>,
+const useInView = <T extends Element>(
+	target: MutableRefObject<T | null>,
 	options: IntersectionObserverInit = {}
 ) => {
 	const [isIntersecting, setIsIntersecting] = useState(false);
-	const [observer, setObserver] = useState<IntersectionObserver | null>(null);
 
 	useEffect(() => {
+		if (!target.current) return; // Verifica si el target existe
+
 		const handleIntersect = (entries: IntersectionObserverEntry[]) => {
 			setIsIntersecting(entries[0].isIntersecting);
 		};
 
-		observer?.disconnect();
+		const observer = new IntersectionObserver(handleIntersect, options);
+		observer.observe(target.current);
 
-		if (target.current) {
-			const _observer = new IntersectionObserver(
-				handleIntersect,
-				options
-			);
-			_observer.observe(target.current);
-			setObserver(_observer);
-		}
-	}, [target.current, options.root, options.rootMargin, options.threshold]);
-
-	useEffect(() => {
 		return () => {
-			observer?.disconnect();
+			observer.disconnect();
 		};
-	}, );
+	}, [target.current, options.root, options.rootMargin, options.threshold]);
 
 	return isIntersecting;
 };

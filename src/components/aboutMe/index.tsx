@@ -50,72 +50,78 @@ const AboutMe = () => {
 	}, []);
 
 	return (
-		<div
-			className='p-4 rounded-2xl w-11/12 sm:w-2/4 max-h-3/4 m-auto gap-3 flex flex-col items-center justify-between shadow border border-gray-700'
-			style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.2)' }}>
-			<header className='flex justify-center w-full gap-3'>
-				<div
-					className='flex-grow-3 max-w-24 md:max-w-48 min-w-20 shadow p-2 border border-gray-700 rounded-md'
-					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
-					<Image
-						src={myImage}
-						loading='lazy'
-						alt='Mentor profile'
-						className='w-full rounded-lg object-cover'
-					/>
-				</div>
-			</header>
-			<div className='flex flex-col items-center text-center gap-1 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
-				<h2 className='flex items-center text-xl gap-2'>
-					Luciano Carducci
-				</h2>
-				<p>Frontend/Fullstack Developer</p>
-			</div>
+		<div className='flex justify-center h-5/6'>
 			<div
-				className='shadow p-2 w-full sm:w-auto'
-				style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
-				<LogosSlider />
-			</div>
-			<main
-				className='w-full border border-gray-700 rounded shadow'
-				style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
-				<div className='p-4'>
-					<ul className='relative flex flex-col justify-start overflow-x-hidden overflow-y-auto md:overflow-hidden max-h-52 md:max-h-full'>
-						<li>
-							<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2'>
-								Sobre mi
-							</h1>
-						</li>
-						<li>
-							<p className='dark:text-portfolio-antiFlashWhite text-portfolio-black p-2'>
-								{aboutMe}
-							</p>
-						</li>
-						<li>
-							<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2'>
-								Skills
-							</h1>
-						</li>
-						<div className='flex flex-col md:flex-row justify-around items-center w-full p-2 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
-							<li className='mb-4 sm:mb-0 flex flex-col text-center'>
-								{techFront.map((tech, index) => (
-									<span key={index}>-{tech}-</span>
-								))}
-							</li>
-							<li className='mb-4 sm:mb-0 flex flex-col text-center'>
-								{softSkills.map((tech, index) => (
-									<span key={index}>-{tech}-</span>
-								))}
-							</li>
-							<li className='mb-4 sm:mb-0 flex flex-col text-center'>
-								{techBack.map((tech, index) => (
-									<span key={index}>-{tech}-</span>
-								))}
-							</li>
-						</div>
-					</ul>
+				className='p-4 rounded-2xl lg:w-3/5 md:w-4/5 w-11/12 h-full gap-3 flex flex-col items-center justify-between shadow border border-gray-700'
+				style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.2)' }}>
+				<header className='flex justify-center w-full gap-3'>
+					<div
+						className='flex-grow-3 max-w-24 md:max-w-36 min-w-20 shadow p-2 border border-gray-700 rounded-md'
+						style={{
+							boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)',
+						}}>
+						<Image
+							src={myImage}
+							loading='lazy'
+							alt='Mentor profile'
+							className='w-full rounded-lg object-cover'
+						/>
+					</div>
+				</header>
+				<div className='flex flex-col items-center text-center gap-1 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
+					<h2 className='flex items-center text-xl gap-2'>
+						Luciano Carducci
+					</h2>
+					<p>Frontend/Fullstack Developer</p>
 				</div>
-			</main>
+				<div
+					className='shadow p-2 w-full sm:w-auto'
+					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
+					<LogosSlider />
+				</div>
+				<main
+					className='w-full border border-gray-700 rounded shadow'
+					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
+					<div className='p-4'>
+						<ul className='relative flex flex-col justify-start overflow-x-hidden overflow-y-auto max-h-96'>
+							<li>
+								<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2'>
+									Sobre mi
+								</h1>
+							</li>
+							<li>
+								<p className='dark:text-portfolio-antiFlashWhite text-portfolio-black p-2'>
+									{aboutMe}
+								</p>
+							</li>
+							<li>
+								<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2'>
+									Skills
+								</h1>
+							</li>
+							<div className='flex flex-col md:flex-row justify-around items-center w-full p-2 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
+								<li className='mb-4 sm:mb-0 flex flex-col text-center'>
+									{techFront.map((tech, index) => (
+										<span key={index}>-{tech}-</span>
+									))}
+								</li>
+								<br />
+								<li className='mb-4 sm:mb-0 flex flex-col text-center'>
+									{softSkills.map((tech, index) => (
+										<span key={index}>-{tech}-</span>
+									))}
+								</li>
+								<br />
+								<li className='mb-4 sm:mb-0 flex flex-col text-center'>
+									{techBack.map((tech, index) => (
+										<span key={index}>-{tech}-</span>
+									))}
+								</li>
+							</div>
+						</ul>
+					</div>
+				</main>
+			</div>
 		</div>
 	);
 };

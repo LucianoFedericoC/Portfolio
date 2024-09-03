@@ -24,7 +24,7 @@ const Home = () => {
 
 	const [showButton, setShowButton] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
-	//
+	
 	const { resolvedTheme: currentTheme }: any = useTheme();
 	const [resolvedTheme, setResolvedTheme] = useState('light');
 
