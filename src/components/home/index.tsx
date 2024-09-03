@@ -25,15 +25,15 @@ const Home = () => {
 
 	const [showButton, setShowButton] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
+	const { resolvedTheme: currentTheme }: any = useTheme();
 	const [resolvedTheme, setResolvedTheme] = useState('light');
 
-	const { resolvedTheme: currentTheme }: any =
-		typeof window !== 'undefined' ? useTheme() : { resolvedTheme: 'light' };
-
-	useEffect(() => {
-		setResolvedTheme(currentTheme);
-		setIsLoading(false);
-	}, [currentTheme]);
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setResolvedTheme(currentTheme);
+        }
+        setIsLoading(false);
+    }, [currentTheme]);
 
 	const handleScrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
