@@ -13,27 +13,27 @@ import Image from 'next/image';
 import handleSection from '../../utils/sectioned';
 import HamburguerMenu from '../navigation/nav/hamburguerMenu';
 import { useRef, useEffect, useState } from 'react';
-import { SectionRef } from './domain/home/home.interface';
 import Projects from '../projects';
 import AboutMe from '../aboutMe';
 import Loader from '../loader/pageLoader';
 import { useTheme } from 'next-themes';
 
 const Home = () => {
-	const section_1 = useRef<SectionRef>(null);
-	const section_2 = useRef(null);
+	const section_1 = useRef<HTMLElement>(null);
+	const section_2 = useRef<HTMLElement>(null);
 
 	const [showButton, setShowButton] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
+	
 	const { resolvedTheme: currentTheme }: any = useTheme();
 	const [resolvedTheme, setResolvedTheme] = useState('light');
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            setResolvedTheme(currentTheme);
-        }
-        setIsLoading(false);
-    }, [currentTheme]);
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			setResolvedTheme(currentTheme);
+		}
+		setIsLoading(false);
+	}, [currentTheme]);
 
 	const handleScrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -91,8 +91,7 @@ const Home = () => {
 								</div>
 							</div>
 							<div className='md:fixed flex md:right-0 md:flex-col md:mb-0 md:mr-6 mr-0 mb-32 md:gap-y-6 gap-x-6 flex-row z-10'>
-								{resolvedTheme != undefined &&
-								resolvedTheme === 'dark' ? (
+								{resolvedTheme === 'dark' ? (
 									<>
 										<Link
 											className='hover:-translate-y-1 hover:scale-110 duration-300 md:sticky'
@@ -112,8 +111,7 @@ const Home = () => {
 											<Image src={linkedIn} alt='gmail' />
 										</Link>
 									</>
-								) : resolvedTheme != undefined &&
-								  resolvedTheme === 'light' ? (
+								) : resolvedTheme === 'light' ? (
 									<>
 										<Link
 											className='hover:-translate-y-1 hover:scale-110 duration-300 md:sticky'
@@ -142,9 +140,7 @@ const Home = () => {
 											/>
 										</Link>
 									</>
-								) : (
-									''
-								)}
+								) : null}
 							</div>
 						</div>
 					</header>
