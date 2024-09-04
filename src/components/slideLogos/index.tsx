@@ -41,8 +41,6 @@ const LogosSlider: React.FC = () => {
 						} gap-x-2`}>
 						{carouselBlogs.map((index) => (
 							<img
-								width={500}
-								height={100}
 								src={`https://skillicons.dev/icons?i=${carouselBlogs}&perline=10`}
 								key={index}
 							/>
