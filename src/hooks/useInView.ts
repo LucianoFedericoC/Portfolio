@@ -7,7 +7,7 @@ const useInView = <T extends Element>(
 	const [isIntersecting, setIsIntersecting] = useState(false);
 
 	useEffect(() => {
-		if (!target.current) return; // Verifica si el target existe
+		if (!target.current) return;
 
 		const handleIntersect = (entries: IntersectionObserverEntry[]) => {
 			setIsIntersecting(entries[0].isIntersecting);

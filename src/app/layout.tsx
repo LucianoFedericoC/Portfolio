@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import logo from '../assets/SVG/logo.svg';
 import './globals.css';
 import 'dotenv/config';
 import Footer from '@/components/navigation/footer';

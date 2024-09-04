@@ -61,12 +61,12 @@ const AboutMe = () => {
 							boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)',
 						}}>
 						<Image
-							width={100}
-							height={100}
 							src={myImage}
-							loading='lazy'
+							width={200}
+							height={200}
 							alt='Mentor profile'
 							className='w-full rounded-lg object-cover'
+							priority
 						/>
 					</div>
 				</header>
@@ -78,12 +78,14 @@ const AboutMe = () => {
 				</div>
 				<div
 					className='shadow p-2 w-full sm:w-auto'
-					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
-					<LogosSlider />
+					// style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}
+					>
+					{/* <LogosSlider /> */}
 				</div>
 				<main
 					className='w-full border border-gray-700 rounded shadow'
-					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
+					// style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}
+					>
 					<div className='p-4'>
 						<ul className='relative flex flex-col justify-start overflow-x-hidden overflow-y-auto max-h-44 lg:max-h-96'>
 							<li>
