@@ -15,21 +15,21 @@ const Projects = () => {
 						style={{
 							boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)',
 						}}>
-						<h1 className='text-2xl font-bold mb-4'>E-BookStore</h1>
+						<h1 className='text-2xl font-bold mb-4 dark:text-portfolio-antiFlashWhite text-portfolio-black'>E-BookStore</h1>
 						<div className='w-full bg-transparent flex items-center justify-center'>
 							<Image src={ebookstore} alt='project-image' className='object-cover'/>
 						</div>
-						<p className='mt-6 text-lg text-center'>Un e-commerce de libros realizado con 6 colegas para el proyecto final del curso de programacion la cual cuenta con sistema de usuarios, pagos y una llamativa interfaz de usuario.</p>
+						<p className='mt-6 text-lg text-center dark:text-portfolio-antiFlashWhite text-portfolio-black'>Un e-commerce de libros realizado con 6 colegas para el proyecto final del curso de programacion la cual cuenta con sistema de usuarios, pagos y una llamativa interfaz de usuario.</p>
 					</div>
 				</Link>
 				<div
 					className='flex flex-col items-center justify-center border border-gray-700 rounded-md shadow p-4'
 					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
-					<h1 className='text-2xl font-bold mb-4'>Título</h1>
+					<h1 className='text-2xl font-bold mb-4 dark:text-portfolio-antiFlashWhite text-portfolio-black'>Título</h1>
 					<div className='h-72 w-full bg-transparent flex items-center justify-center'>
 						IMAGEN
 					</div>
-					<p className='mt-6 text-lg text-center'>Descripción</p>
+					<p className='mt-6 text-lg text-center dark:text-portfolio-antiFlashWhite text-portfolio-black'>Descripción</p>
 				</div>
 				<div
 					className='flex flex-col items-center justify-center border border-gray-700 rounded-md shadow p-4'
@@ -43,11 +43,11 @@ const Projects = () => {
 				<div
 					className='flex flex-col items-center justify-center border border-gray-700 rounded-md shadow p-4'
 					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
-					<h1 className='text-2xl font-bold mb-4'>Título</h1>
+					<h1 className='text-2xl font-bold mb-4 dark:text-portfolio-antiFlashWhite text-portfolio-black'>Título</h1>
 					<div className='h-72 w-full bg-transparent flex items-center justify-center'>
 						IMAGEN
 					</div>
-					<p className='mt-6 text-lg text-center'>Descripción</p>
+					<p className='mt-6 text-lg text-center dark:text-portfolio-antiFlashWhite text-portfolio-black'>Descripción</p>
 				</div>
 			</div>
 		</div>
