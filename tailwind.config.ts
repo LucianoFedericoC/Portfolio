@@ -7,15 +7,6 @@ const config: Config = {
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 		"./src/**/*.{html,js}",
 	],
-	purge: {
-		enabled: true,
-		content: [
-		  './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-		  './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-		  './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-		  "./src/**/*.{html,js,ts,jsx,tsx}",
-		],
-	  },
 	darkMode: ['class'],
 	theme: {
 		extend: {
