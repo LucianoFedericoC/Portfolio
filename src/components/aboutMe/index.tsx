@@ -50,9 +50,9 @@ const AboutMe = () => {
 	}, []);
 
 	return (
-		<div className='flex justify-center h-5/6'>
+		<div className='flex justify-center h-[70%] md:h-4/5 lg:h-[97%]'>
 			<div
-				className='p-4 rounded-2xl lg:w-3/5 md:w-4/5 w-11/12 h-full gap-3 flex flex-col items-center justify-between shadow border border-gray-700'
+				className='p-4 rounded-2xl lg:w-3/5 md:w-4/5 w-11/12 h-full gap-6 flex flex-col items-center justify-between shadow border border-gray-700'
 				style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.2)' }}>
 				<header className='flex justify-center w-full gap-3'>
 					<div
@@ -78,13 +78,13 @@ const AboutMe = () => {
 				</div>
 				<div
 					className='shadow p-2 w-full sm:w-auto'
-					// style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}
+					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}
 					>
-					{/* <LogosSlider /> */}
+					<LogosSlider />
 				</div>
 				<main
 					className='w-full border border-gray-700 rounded shadow'
-					// style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}
+					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}
 					>
 					<div className='p-4'>
 						<ul className='relative flex flex-col justify-start overflow-x-hidden overflow-y-auto max-h-44 lg:max-h-96'>
