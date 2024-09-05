@@ -4,6 +4,7 @@ import logo from '../../../assets/SVG/logo.svg';
 import handleSection from '@/utils/sectioned';
 import DarkModeSwitch from './darkModeSwitch';
 import { useState, useEffect } from 'react';
+import downloadIcon from '../../../assets/SVG/download-file-svgrepo-com.svg';
 
 const Navbar = ({ section2 }: any) => {
 	const [isVisible, setIsVisible] = useState(true);
@@ -64,11 +65,18 @@ const Navbar = ({ section2 }: any) => {
 								</Link>
 							</li>
 							<li>
-								<Link href='#'>
-									<p className='hover:scale-105 duration-75 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
-										Resumen
+								<a
+									href='/downloads/Luciano_Carducci_Frontend_Developer.pdf'
+									download>
+									<p className='hover:scale-105 duration-75 dark:text-portfolio-antiFlashWhite text-portfolio-black flex flex-row'>
+										<Image
+											src={downloadIcon}
+											alt='downloadIcon'
+											className='mx-2'
+										/>
+										Curriculum
 									</p>
-								</Link>
+								</a>
 							</li>
 						</ul>
 					</div>
