@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import DarkModeSwitch from './darkModeSwitch';
+import downloadIcon from '../../../assets/SVG/download-file-svgrepo-com.svg';
 
 const HamburguerMenu = ({ section2 }: any) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +38,10 @@ const HamburguerMenu = ({ section2 }: any) => {
 	});
 
 	return (
-		<div className={`flex md:hidden items-end justify-center w-full h-14 dark:bg-portfolio-black bg-portfolio-antiFlashWhite flex-col z-40 ${isOpen ? 'sticky top-0': ''}`}>
+		<div
+			className={`flex md:hidden items-end justify-center w-full h-14 dark:bg-portfolio-black bg-portfolio-antiFlashWhite flex-col z-40 ${
+				isOpen ? 'sticky top-0' : ''
+			}`}>
 			<button
 				ref={ButtonMenu}
 				className='flex flex-col h-12 w-12 m-2 border-0.5 border-white rounded justify-center items-center group z-40'
@@ -78,23 +83,30 @@ const HamburguerMenu = ({ section2 }: any) => {
 									onClick={(e) => handleSection(e, section2)}
 									className='w-48'>
 									<p className='dark:text-portfolio-antiFlashWhite text-portfolio-black'>
-										Projects
+										Projectos
 									</p>
 								</button>
 							</li>
 							<li className='border-y border-[#3e7187] w-[85%] py-1'>
 								<Link href='/contact'>
 									<p className='dark:text-portfolio-antiFlashWhite text-portfolio-black'>
-										Contact
+										Contacto
 									</p>
 								</Link>
 							</li>
 							<li className='border-y border-[#3e7187] w-[85%] py-1'>
-								<Link href='#'>
-									<p className='dark:text-portfolio-antiFlashWhite text-portfolio-black'>
-										Resumen
+								<a
+									href="/downloads/Luciano_Carducci_Frontend_Developer.pdf"
+									download>
+									<p className='dark:text-portfolio-antiFlashWhite text-portfolio-black flex flex-row justify-center'>
+										<Image
+											src={downloadIcon}
+											alt='downloadIcon'
+											className='mx-2'
+										/>
+										Curriculum
 									</p>
-								</Link>
+								</a>
 							</li>
 						</ul>
 					</aside>
