@@ -5,7 +5,7 @@ import ebookstore from '../../assets/e-bookstore.png';
 const Projects = () => {
 	return (
 		<div className='h-screen flex justify-center bg-portfolio-black'>
-			<div className='lg:w-3/5 md:w-3/4 w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-4 md:p-8'>
+			<div className='lg:w-3/5 md:w-3/4 w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-4 md:p-8 overflow-auto'>
 				{[
 					{
 						href: 'https://e-commerce-book-store.vercel.app/',
