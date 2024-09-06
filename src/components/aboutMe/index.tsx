@@ -21,10 +21,10 @@ const AboutMe = () => {
 		'GIT',
 	];
 	const softSkills = [
-		'Proactive',
-		'Active listener',
-		'Comunicative',
-		'Teamwork',
+		'Proactivo',
+		'Escucha activa',
+		'Comunicativo',
+		'Trabajo en equipo',
 	];
 	const aboutMe =
 		'¡Hola! Soy Luciano Carducci, desarrollador web frontend/fullstack con una visión creativa para alcanzar experiencias digitales innovadoras. Mi enfoque se centra en fusionar la estética con la funcionalidad, creando sitios web que no solo resulten óptimos sino, que también ofrezcan una experiencia de usuarios singular. Me caracterizo por mi aptitud para trabajar en equipo y colaborar estrechamente con otros diseñadores y desarrolladores para llevar las ideas desde el concepto hasta la realidad digital.';
@@ -50,13 +50,13 @@ const AboutMe = () => {
 	}, []);
 
 	return (
-		<div className='flex justify-center h-screen p-4'>
+		<div className='flex justify-center items-center min-h-screen p-4'>
 			<div
-				className='p-4 rounded-2xl lg:w-3/5 md:w-4/5 w-11/12 gap-6 flex flex-col items-center justify-between shadow border border-gray-700'
+				className='p-4 rounded-2xl w-full max-w-5xl gap-6 flex flex-col items-center justify-between shadow border border-gray-700'
 				style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.2)' }}>
 				<header className='flex justify-center w-full gap-3'>
 					<div
-						className='flex-grow-3 max-w-24 md:max-w-36 shadow p-2 border border-gray-700 rounded-md'
+						className='flex-shrink-0 w-24 md:w-36 shadow p-2 border border-gray-700 rounded-md'
 						style={{
 							boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)',
 						}}>
@@ -65,7 +65,7 @@ const AboutMe = () => {
 							width={200}
 							height={200}
 							alt='Mentor profile'
-							className='w-full rounded-lg object-cover'
+							className='w-full h-full object-cover rounded-lg'
 							priority
 						/>
 					</div>
@@ -77,19 +77,17 @@ const AboutMe = () => {
 					<p>Frontend/Fullstack Developer</p>
 				</div>
 				<div
-					className='shadow p-2 w-full sm:w-auto'
-					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}
-					>
+					className='shadow p-2 w-full'
+					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
 					<LogosSlider />
 				</div>
 				<main
 					className='w-full border border-gray-700 rounded shadow'
-					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}
-					>
+					style={{ boxShadow: '0 0 10px rgba(300, 300, 300, 0.1)' }}>
 					<div className='p-4'>
-						<ul className='relative flex flex-col justify-start overflow-x-hidden overflow-y-auto max-h-44 lg:max-h-96'>
+						<ul className='flex flex-col justify-start overflow-y-auto max-h-96'>
 							<li>
-								<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2'>
+								<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
 									Sobre mi
 								</h1>
 							</li>
@@ -99,28 +97,31 @@ const AboutMe = () => {
 								</p>
 							</li>
 							<li>
-								<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2'>
+								<h1 className='rounded-tl rounded-bl transition-colors duration-300 border-y border-gray-700 rounded p-2 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
 									Skills
 								</h1>
 							</li>
-							<div className='flex flex-col md:flex-row justify-around items-center w-full p-2 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
-								<li className='mb-4 sm:mb-0 flex flex-col text-center'>
+							<div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-2 dark:text-portfolio-antiFlashWhite text-portfolio-black'>
+								<div className='flex flex-col items-center text-center'>
+									<h3 className='font-bold mb-2'>Frontend</h3>
 									{techFront.map((tech, index) => (
 										<span key={index}>-{tech}-</span>
 									))}
-								</li>
-								<br />
-								<li className='mb-4 sm:mb-0 flex flex-col text-center'>
-									{softSkills.map((tech, index) => (
-										<span key={index}>-{tech}-</span>
+								</div>
+								<div className='flex flex-col items-center text-center'>
+									<h3 className='font-bold mb-2'>
+										Soft Skills
+									</h3>
+									{softSkills.map((skill, index) => (
+										<span key={index}>-{skill}-</span>
 									))}
-								</li>
-								<br />
-								<li className='mb-4 sm:mb-0 flex flex-col text-center'>
+								</div>
+								<div className='flex flex-col items-center text-center'>
+									<h3 className='font-bold mb-2'>Backend</h3>
 									{techBack.map((tech, index) => (
 										<span key={index}>-{tech}-</span>
 									))}
-								</li>
+								</div>
 							</div>
 						</ul>
 					</div>
