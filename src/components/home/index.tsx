@@ -24,7 +24,7 @@ const Home = () => {
 
 	const [showButton, setShowButton] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
-	
+
 	const { resolvedTheme: currentTheme }: any = useTheme();
 	const [resolvedTheme, setResolvedTheme] = useState('light');
 
@@ -149,7 +149,7 @@ const Home = () => {
 					/>
 					<section
 						ref={section_1}
-						className='dark:bg-portfolio-black bg-portfolio-antiFlashWhite h-screen w-full flex justify-center items-center'>
+						className='dark:bg-portfolio-black bg-portfolio-antiFlashWhite min-h-screen w-full flex justify-center items-center'>
 						<AboutMe />
 					</section>
 					<div
@@ -157,7 +157,7 @@ const Home = () => {
 					/>
 					<section
 						ref={section_2}
-						className='dark:bg-portfolio-black bg-portfolio-antiFlashWhite h-screen w-full flex justify-center items-center'>
+						className='dark:bg-portfolio-black bg-portfolio-antiFlashWhite min-h-screen w-full flex justify-center items-center'>
 						<Projects />
 					</section>
 					{showButton && (
