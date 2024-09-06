@@ -44,6 +44,7 @@ const LogosSlider: React.FC = () => {
 							<img
 								src={`https://skillicons.dev/icons?i=${carouselBlogs}&perline=10`}
 								key={index}
+								alt='techIcons'
 							/>
 						))}
 					</div>
