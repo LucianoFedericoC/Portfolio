@@ -73,7 +73,7 @@ const HamburguerMenu = ({ section2 }: any) => {
 					<div className='fixed w-full top-0 left-0 z-20 h-full bg-gray-800/5 backdrop-blur-sm overflow-hidden' />
 					<aside
 						ref={HMenu}
-						className='fixed z-30 top-0 dark:bg-black bg-gray-300 dark:bg-opacity-80 bg-opacity-90 w-full smartphone_200px:h-[40%] smartphone_380px:h-[34%] smartphone_400px:h-[35%] smartphone_500px:h-[40%] pt-10 animate-fade-left animate-duration-[500ms]'>
+						className='fixed z-30 top-0 dark:bg-black min-h-64 bg-gray-300 dark:bg-opacity-80 bg-opacity-90 w-full pt-10 animate-fade-left animate-duration-[500ms]'>
 						<div className='fixed top-0 h-12 w-12 m-2'>
 							<DarkModeSwitch />
 						</div>
