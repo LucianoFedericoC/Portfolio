@@ -38,7 +38,7 @@ const ContactPage: React.FC = () => {
 		setButtonLoad({ ...buttonLoad, load: true });
 		try {
 			await axios.post(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`,
+				'/api/contact',
 				formData
 			);
 			setButtonLoad({ ...buttonLoad, load: false });
