@@ -40,7 +40,7 @@ const LogosSlider: React.FC = () => {
 							isIntersecting ? 'animate-scroll' : ''
 						} gap-x-2`}>
 						{carouselBlogs.map((index) => (
-							// eslint-disable-next-line react-hooks/exhaustive-deps
+							// eslint-disable-next-line @next/next/no-img-element
 							<img
 								src={`https://skillicons.dev/icons?i=${carouselBlogs}&perline=10`}
 								key={index}

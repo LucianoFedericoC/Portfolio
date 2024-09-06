@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
         from: `"${name}" <${email}>`,
         to: MY_EMAIL,
         subject: "Contacto portfolio",
-        text: `Nombre: ${name}\nCorreo electronico: ${email}\n\nAsunto:${subject}\n\nMensaje:\n${message}`,
+        text: `Nombre: ${name}\nCorreo electronico: ${email}\n\nAsunto: ${subject}\n\nMensaje:\n${message}`,
       });
       return NextResponse.json({ message: 'Email enviado correctamente' });
     } catch (error) {
