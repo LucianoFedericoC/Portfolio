@@ -23,12 +23,13 @@ const Home = () => {
 	const section_2 = useRef<HTMLElement>(null);
 
 	const [showButton, setShowButton] = useState(false);
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const { resolvedTheme: currentTheme }: any = useTheme();
 	const [resolvedTheme, setResolvedTheme] = useState('light');
 
 	useEffect(() => {
+		setIsLoading(true)
 		if (typeof window !== 'undefined') {
 			setResolvedTheme(currentTheme);
 		}

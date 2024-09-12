@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,7 +12,7 @@ import { delay } from '@/utils/delay';
 
 const ContactPage: React.FC = () => {
 	const { resolvedTheme } = useTheme();
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const [buttonLoad, setButtonLoad] = useState({
 		error: false,
 		confirm: false,
@@ -25,6 +25,11 @@ const ContactPage: React.FC = () => {
 		message: '',
 		subject: '',
 	});
+
+	useEffect(() => {
+	 setIsLoading(false)
+	}, [resolvedTheme])
+	
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -45,7 +50,7 @@ const ContactPage: React.FC = () => {
 			setButtonLoad({ ...buttonLoad, confirm: true });
 			delay(() => {
 				setButtonLoad({ ...buttonLoad, confirm: false });
-			}, 2000);
+			}, 3000);
 			setFormData({ name: '', email: '', message: '', subject: '' });
 		} catch (error) {
 			setButtonLoad({ ...buttonLoad, error: true });
@@ -55,7 +60,7 @@ const ContactPage: React.FC = () => {
 				setButtonLoad({ ...buttonLoad, load: false });
 				setButtonLoad({ ...buttonLoad, error: false });
 				setFormData({ name: '', email: '', message: '', subject: '' });
-			}, 2000);
+			}, 3000);
 		}
 	};
 
@@ -94,7 +99,7 @@ const ContactPage: React.FC = () => {
 							<div className='space-y-4 md:space-y-10 lg:space-y-12'>
 								<div className='relative'>
 									<input
-										className='peer w-full p-4 border rounded-md bg-portfolio-antiFlashWhite text-portfolio-black placeholder-transparent focus:outline-none focus:ring-2'
+										className='peer w-full p-4 border border-gray-400 rounded-md bg-portfolio-antiFlashWhite text-portfolio-black placeholder-transparent focus:outline-none'
 										id='name'
 										type='text'
 										name='name'
@@ -104,14 +109,14 @@ const ContactPage: React.FC = () => {
 										required
 									/>
 									<label
-										className='z-50 absolute left-4 -top-3 text-sm text-gray-600 dark:text-gray-400 transition-all peer-[:not(:placeholder-shown)]:bg-portfolio-antiFlashWhite peer-[:not(:placeholder-shown)]:rounded-md peer-[:not(:placeholder-shown)]:px-2 peer-placeholder-shown:rounded-md peer-placeholder-shown:px-2 peer-placeholder-shown:bg-portfolio-antiFlashWhite  peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3 peer-focus:text-sm'
+										className='z-50 absolute left-4 -top-3 cursor-text text-sm text-gray-600 dark:text-gray-400 transition-all peer-[:not(:placeholder-shown)]:bg-portfolio-antiFlashWhite peer-[:not(:placeholder-shown)]:rounded-md peer-[:not(:placeholder-shown)]:px-2 peer-placeholder-shown:rounded-md peer-placeholder-shown:px-2 peer-placeholder-shown:bg-portfolio-antiFlashWhite  peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3 peer-focus:text-sm'
 										htmlFor='name'>
 										Nombre
 									</label>
 								</div>
 								<div className='relative'>
 									<input
-										className='peer w-full p-4 border rounded-md bg-portfolio-antiFlashWhite text-portfolio-black placeholder-transparent focus:outline-none focus:ring-2'
+										className='peer w-full p-4 border border-gray-400 rounded-md bg-portfolio-antiFlashWhite text-portfolio-black placeholder-transparent focus:outline-none'
 										id='email'
 										type='email'
 										name='email'
@@ -121,14 +126,14 @@ const ContactPage: React.FC = () => {
 										required
 									/>
 									<label
-										className='absolute left-4 -top-3 text-sm text-gray-600 dark:text-gray-400 transition-all peer-[:not(:placeholder-shown)]:bg-portfolio-antiFlashWhite peer-[:not(:placeholder-shown)]:rounded-md peer-[:not(:placeholder-shown)]:px-2 peer-placeholder-shown:rounded-md peer-placeholder-shown:px-2 peer-placeholder-shown:bg-portfolio-antiFlashWhite peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3 peer-focus:text-sm'
+										className='absolute left-4 -top-3 cursor-text text-sm text-gray-600 dark:text-gray-400 transition-all peer-[:not(:placeholder-shown)]:bg-portfolio-antiFlashWhite peer-[:not(:placeholder-shown)]:rounded-md peer-[:not(:placeholder-shown)]:px-2 peer-placeholder-shown:rounded-md peer-placeholder-shown:px-2 peer-placeholder-shown:bg-portfolio-antiFlashWhite peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3 peer-focus:text-sm'
 										htmlFor='email'>
 										Correo Electrónico
 									</label>
 								</div>
 								<div className='relative'>
 									<input
-										className='peer w-full p-4 border rounded-md bg-portfolio-antiFlashWhite text-portfolio-black placeholder-transparent focus:outline-none focus:ring-2'
+										className='peer w-full p-4 border border-gray-400 rounded-md bg-portfolio-antiFlashWhite text-portfolio-black placeholder-transparent focus:outline-none'
 										id='subject'
 										type='text'
 										name='subject'
@@ -137,27 +142,32 @@ const ContactPage: React.FC = () => {
 										onChange={handleChange}
 									/>
 									<label
-										className='absolute left-4 -top-3 text-sm text-gray-600 dark:text-gray-400 transition-all peer-[:not(:placeholder-shown)]:bg-portfolio-antiFlashWhite peer-[:not(:placeholder-shown)]:rounded-md peer-[:not(:placeholder-shown)]:px-2 peer-placeholder-shown:rounded-md peer-placeholder-shown:px-2 peer-placeholder-shown:bg-portfolio-antiFlashWhite peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3 peer-focus:text-sm'
+										className='absolute left-4 -top-3 cursor-text text-sm text-gray-600 dark:text-gray-400 transition-all peer-[:not(:placeholder-shown)]:bg-portfolio-antiFlashWhite peer-[:not(:placeholder-shown)]:rounded-md peer-[:not(:placeholder-shown)]:px-2 peer-placeholder-shown:rounded-md peer-placeholder-shown:px-2 peer-placeholder-shown:bg-portfolio-antiFlashWhite peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3 peer-focus:text-sm'
 										htmlFor='subject'>
 										Asunto
 									</label>
 								</div>
 								<div className='relative'>
 									<textarea
-										className='w-full p-4 border rounded-md bg-portfolio-antiFlashWhite text-portfolio-black placeholder-gray-500 focus:outline-none focus:ring-2 resize-none h-32'
+										className='peer w-full p-4 border border-gray-400 rounded-md bg-portfolio-antiFlashWhite text-portfolio-black placeholder-transparent focus:outline-none resize-none h-32'
 										id='message'
 										name='message'
 										placeholder='Mensaje'
 										value={formData.message}
 										onChange={handleChange}
 										required></textarea>
+										<label
+										className='absolute left-4 -top-3 cursor-text text-sm text-gray-600 dark:text-gray-400 transition-all peer-[:not(:placeholder-shown)]:bg-portfolio-antiFlashWhite peer-[:not(:placeholder-shown)]:rounded-md peer-[:not(:placeholder-shown)]:px-2 peer-placeholder-shown:rounded-md peer-placeholder-shown:px-2 peer-placeholder-shown:bg-portfolio-antiFlashWhite peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3 peer-focus:text-sm'
+										htmlFor='message'>
+										Mensaje
+									</label>
 								</div>
 								<div className='flex justify-end'>
 									<ButtonLoader
 										buttonLoad={buttonLoad}
 										loadStr={'Enviando...'}
-										loadEndStr={'Enviado'}
-										loadErrorStr={'Error'}
+										loadEndStr={'Mensaje enviado'}
+										loadErrorStr={'Error al enviar mensaje'}
 									/>
 								</div>
 							</div>
